@@ -21,6 +21,6 @@ jobs:
     - name: Install
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
+      run: wkhtmltopdf http://www.google.com google.pdf
       env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-      run: echo "$GITHUB_CONTEXT"
+        XDG_RUNTIME_DIR: /home/runner/work/portfolio-template/portfolio-template/assets
