@@ -21,7 +21,6 @@ jobs:
     - name: Install
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
-      run: wkhtmltopdf http://www.google.com resume.pdf
-      outputs:
-      results-file: 123
-        description: "Path to results file"
+      env:
+          GITHUB_CONTEXT: ${{ toJSON(github.action_path) }}
+      run: echo "$GITHUB_CONTEXT"
