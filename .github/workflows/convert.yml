@@ -21,9 +21,4 @@ jobs:
     - name: Install
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
-      run: wkhtmltopdf http://www.google.com resume.pdf
-    - name: Archive resume PDF
-        uses: actions/upload-artifact@v2
-        with:
-          name: resume
-          path: assets/resume.pdf
+      run: wkhtmltopdf http://www.google.com assets/resume.pdf
