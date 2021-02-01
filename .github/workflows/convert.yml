@@ -22,5 +22,6 @@ jobs:
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
       run: wkhtmltopdf http://www.google.com resume.pdf
-      env:
-        XDG_RUNTIME_DIR: /assets
+      outputs:
+      results-file: 123
+        description: "Path to results file"
