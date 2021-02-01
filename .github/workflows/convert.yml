@@ -22,5 +22,5 @@ jobs:
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
       env:
-          GITHUB_CONTEXT: ${{ toJSON(github.action_path) }}
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
       run: echo "$GITHUB_CONTEXT"
