@@ -1,0 +1,24 @@
+name: Converting To PDF
+
+on:
+  push:
+    branches: 
+      - action
+
+jobs:
+  convert:
+    name: Convert portfolio to pdf
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Update
+      run: sudo apt-get update
+    - name: Install
+      run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
+    - name: Convert
+      run: wkhtmltopdf http://www.google.com google.pdf
