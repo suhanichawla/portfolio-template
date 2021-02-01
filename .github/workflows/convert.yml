@@ -23,7 +23,7 @@ jobs:
     - name: Convert
       env:
         XDG_RUNTIME_DIR: /home/runner/work/portfolio-template/portfolio-template/assets
-      run: xvfb-run wkhtmltopdf https://google.com google.pdf
+      run: xvfb-run wkhtmltopdf https://google.com assets/google.pdf
     - name: Archive convert results
       uses: actions/upload-artifact@v2
       with:
