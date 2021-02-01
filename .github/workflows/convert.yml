@@ -21,4 +21,6 @@ jobs:
     - name: Install
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
+      env:
+        XDG_RUNTIME_DIR: /home/runner/work/portfolio-template/portfolio-template/assets
       run: xvfb-run wkhtmltopdf https://google.com google.pdf
