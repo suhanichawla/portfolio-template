@@ -20,7 +20,7 @@ jobs:
     - name: Update
       run: sudo apt-get update
     - name: Install
-      run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
+      run: sudo apt-get install xvfb wkhtmltopdf
     - name: Convert
       run: |
         mkdir cv
