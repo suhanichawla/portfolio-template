@@ -31,3 +31,7 @@ jobs:
       with:
         name: resume
         path: ${{ github.workspace }}/cv
+    - name: Download a single artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: resume
