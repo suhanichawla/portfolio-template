@@ -3,7 +3,7 @@ name: Converting To PDF
 on:
   push:
     branches: 
-      - action
+      - generatePDF
 
 jobs:
   convert:
@@ -23,8 +23,8 @@ jobs:
     - name: Convert
       run: |
         mkdir cv
-        myurl=$(grep 'url:' _config.yml | tail -n1 | awk '{ print s $2}' | tr -d \")
-        xvfb-run wkhtmltopdf ${myurl} cv/resume.pdf
+        portfolioURL=$(grep 'url:' _config.yml | tail -n1 | awk '{ print s $2}' | tr -d \")
+        xvfb-run wkhtmltopdf ${portfolioURL} cv/resume.pdf
     - name: Archive convert results
       uses: actions/upload-artifact@v2
       with:
