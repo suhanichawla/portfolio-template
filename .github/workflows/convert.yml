@@ -21,7 +21,9 @@ jobs:
     - name: Install
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
-      run: xvfb-run wkhtmltopdf suhanichawla.github.io assets/resume.pdf
+      run: 
+        myurl=$(grep 'url:' _config.yml | tail -n1 | awk '{ print s $2}' | tr -d \")
+        xvfb-run wkhtmltopdf ${myurl} assets/resume.pdf
     - name: Archive convert results
       uses: actions/upload-artifact@v2
       with:
