@@ -22,10 +22,11 @@ jobs:
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
       run: |
+        mkdir cv
         myurl=$(grep 'url:' _config.yml | tail -n1 | awk '{ print s $2}' | tr -d \")
-        xvfb-run wkhtmltopdf ${myurl} resume.pdf
+        xvfb-run wkhtmltopdf ${myurl} cv/resume.pdf
     - name: Archive convert results
       uses: actions/upload-artifact@v2
       with:
         name: resume
-        path: ${{ github.workspace }}
+        path: ${{ github.workspace }}/cv
