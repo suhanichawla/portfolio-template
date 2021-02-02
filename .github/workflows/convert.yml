@@ -21,9 +21,7 @@ jobs:
     - name: Install
       run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
     - name: Convert
-      run: xvfb-run wkhtmltopdf https://google.com assets/google.pdf
-    - name: Check path
-      run: echo ${{ github.workspace }}/assets/_config.yaml.url
+      run: xvfb-run wkhtmltopdf suhanichawla.github.io assets/resume.pdf
     - name: Archive convert results
       uses: actions/upload-artifact@v2
       with:
