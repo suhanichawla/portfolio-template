@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - generatePDF
+      - action
 
 jobs:
   convert:
