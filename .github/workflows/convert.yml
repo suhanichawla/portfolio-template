@@ -23,9 +23,9 @@ jobs:
     - name: Convert
       run: |
         myurl=$(grep 'url:' _config.yml | tail -n1 | awk '{ print s $2}' | tr -d \")
-        xvfb-run wkhtmltopdf ${myurl} assets/resume.pdf
+        xvfb-run wkhtmltopdf ${myurl} resume.pdf
     - name: Archive convert results
       uses: actions/upload-artifact@v2
       with:
         name: resume
-        path: ${{ github.workspace }}/assets
+        path: ${{ github.workspace }}
