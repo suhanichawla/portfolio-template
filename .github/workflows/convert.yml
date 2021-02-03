@@ -26,7 +26,7 @@ jobs:
         mkdir cv
         portfolioURL=$(grep 'url:' _config.yml | tail -n1 | awk '{ print s $2}' | tr -d \")
         xvfb-run wkhtmltopdf ${portfolioURL} cv/resume.pdf
-        REMOTE=https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        REMOTE=https://${{ secrets.EXAMPLE_TOKEN }}@github.com/${{ github.repository }}
         git config user.email "${{ github.actor }}@users.noreply.github.com"
         git config user.name "${{ github.actor }}"
         git pull ${REMOTE}
