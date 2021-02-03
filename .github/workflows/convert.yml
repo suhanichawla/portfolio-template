@@ -33,7 +33,7 @@ jobs:
         git checkout master
         git add .
         git status
-        git commit -am "Add new comment"
+        git commit -am "Added updated resume"
         git push ${REMOTE} master
     - name: Archive convert results
       uses: actions/upload-artifact@v2
